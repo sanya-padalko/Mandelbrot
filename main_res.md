@@ -25,14 +25,14 @@ Opt (8x8) #5: 718391602 ticks
 Relative error: 0.097%
 Opt (8x8) avg: 717111425 ticks
 
-Opt (8x8) O3 #1: 716285715 ticks
-Opt (8x8) O3 #2: 716881290 ticks
-Opt (8x8) O3 #3: 717168953 ticks
-Opt (8x8) O3 #4: 717284032 ticks
-Opt (8x8) O3 #5: 718391602 ticks
+Opt (8x8) O3 #1: 84799624 ticks
+Opt (8x8) O3 #2: 84946718 ticks
+Opt (8x8) O3 #3: 85120550 ticks
+Opt (8x8) O3 #4: 85326553 ticks
+Opt (8x8) O3 #5: 85627206 ticks
 
-Relative error: 0.097%
-Opt (8x8) O3 avg: 717111425 ticks
+Relative error: 0.34%
+Opt (8x8) O3 avg: 85131274 ticks
 
 AVX #1: 160210476 ticks
 AVX #2: 160259231 ticks

@@ -89,6 +89,7 @@ print()
 print(f"Relative error: {(std_s / avg * 100):.2}%")
 print(f"Opt (8x8) avg: {int(avg)} ticks")
 s_avg = []
+res_base = []
 print()
 
 
