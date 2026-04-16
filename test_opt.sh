@@ -5,7 +5,7 @@ if [ ! -d "results" ]; then
 fi;
 
 g++ mand_8.cpp -o mand_8.exe
-g++ mand_8.cpp -o mand_8_O3.exe -O3
+g++ mand_8.cpp -o mand_8_O3.exe -O3 -mavx2
 
 ./mand_8.exe "results/results_opt1.txt"
 ./mand_8.exe "results/results_opt2.txt"
