@@ -19,7 +19,7 @@ res_base_O3 = []
 res_opt_O3  = []
 res_avx_O3  = []
 
-s_avg = 0
+s_avg = []
 
 for i in range(5):
     file_name = file1 + str(i + 1) + '.txt'
@@ -29,13 +29,13 @@ for i in range(5):
     std = 2.78 * sqrt(std / 4) / sqrt(5)
 
     print(f"Base #{i + 1}: {int(avg)} +- {int(std)} ticks")
-
-    s_avg += avg
+    s_avg.append(avg)
 
 print()
-print(f"Base avg: {int(s_avg / 5)}")
+print(f"Base avg: {int((sum(s_avg) - min(s_avg) - max(s_avg)) / 3)}")
+s_avg = []
 print()
-s_avg = 0
+
 
 for i in range(5):
     file_name = file1 + '_O3_' + str(i + 1) + '.txt'
@@ -45,12 +45,13 @@ for i in range(5):
     std = 2.78 * sqrt(std / 4) / sqrt(5)
 
     print(f"Base O3 #{i + 1}: {int(avg)} +- {int(std)} ticks")
-    s_avg += avg
+    s_avg.append(avg)
 
 print()
-print(f"Base O3 avg: {int(s_avg / 5)} ticks")
+print(f"Base O3 avg: {int((sum(s_avg) - min(s_avg) - max(s_avg)) / 3)}")
+s_avg = []
 print()
-s_avg = 0
+
 
 for i in range(5):
     file_name = file2 + str(i + 1) + '.txt'
@@ -60,12 +61,13 @@ for i in range(5):
     std = 2.78 * sqrt(std / 4) / sqrt(5)
 
     print(f"Opt #{i + 1}: {int(avg)} +- {int(std)} ticks")
-    s_avg += avg
+    s_avg.append(avg)
 
 print()
-print(f"Opt avg: {int(s_avg / 5)} ticks")
+print(f"Opt avg: {int((sum(s_avg) - min(s_avg) - max(s_avg)) / 3)}")
+s_avg = []
 print()
-s_avg = 0
+
 
 
 for i in range(5):
@@ -76,12 +78,13 @@ for i in range(5):
     std = 2.78 * sqrt(std / 4) / sqrt(5)
 
     print(f"Opt O3 #{i + 1}: {int(avg)} +- {int(std)} ticks")
-    s_avg += avg
+    s_avg.append(avg)
 
 print()
-print(f"Opt O3 avg: {int(s_avg / 5)} ticks")
+print(f"Opt O3 avg: {int((sum(s_avg) - min(s_avg) - max(s_avg)) / 3)}")
+s_avg = []
 print()
-s_avg = 0
+
 
 
 for i in range(5):
@@ -92,25 +95,27 @@ for i in range(5):
     std = 2.78 * sqrt(std / 4) / sqrt(5)
 
     print(f"AVX #{i + 1}: {int(avg)} +- {int(std)} ticks")
-    s_avg += avg
+    s_avg.append(avg)
 
 print()
-print(f"AVX avg: {int(s_avg / 5)} ticks")
+print(f"AVX avg: {int((sum(s_avg) - min(s_avg) - max(s_avg)) / 3)}")
+s_avg = []
 print()
-s_avg = 0
+
 
 
 for i in range(5):
-    file_name = file2 + str(i + 1) + '.txt'
+    file_name = file3 + '_O3_' + str(i + 1) + '.txt'
     res_avx_O3.append(analyze(file_name))
     avg = res_avx_O3[i][0]
     std = res_avx_O3[i][1]
     std = 2.78 * sqrt(std / 4) / sqrt(5)
 
     print(f"AVX O3 #{i + 1}: {int(avg)} +- {int(std)} ticks")
-    s_avg += avg
+    s_avg.append(avg)
 
 print()
-print(f"AVX O3 avg: {int(s_avg / 5)} ticks")
+print(f"AVX O3 avg: {int((sum(s_avg) - min(s_avg) - max(s_avg)) / 3)}")
+s_avg = []
 print()
-s_avg = 0
+
